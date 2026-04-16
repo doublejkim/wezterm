@@ -346,7 +346,7 @@ config.mouse_bindings = {
 -- config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 -- config.font = wezterm.font("JetBrains Mono")
 config.font = wezterm.font("D2Coding")
-config.font_size = 11
+config.font_size = 12
 
 -- disable font ligature (jj)
 harfbuzz_features = { "calt=0", "liga=0", "clig=0"  }
@@ -367,14 +367,6 @@ table.insert(config.hyperlink_rules, {
 	format = 'file://$1',
 })
 
--- Command + 클릭일 때만 링크 열기
-config.mouse_bindings = {
-	{
-		event = { Up = { streak = 1, button = 'Left' } },
-		mods = 'CMD',
-		action = action.OpenLinkAtMouseCursor,
-	},
-}
 
 -- file:// 링크를 열 때, 폴더면 Finder에서 열기
 wezterm.on('open-uri', function(window, pane, uri)
